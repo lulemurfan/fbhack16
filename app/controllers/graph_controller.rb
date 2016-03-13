@@ -11,5 +11,16 @@ class GraphController < ApplicationController
 		end
 		fileObj.close
 		@filename = params[:file]
+
+		runPython()
 	end
+
+	def runPython()
+		t = "python fft.py '" + @data.to_s + "'"
+		@fftData = `#{t}`
+		puts t
+		@fft = eval @fftData
+		puts ">>>>>>>>>>>>>>>>>>>>>>>>>>" + @fft.to_s
+	end
+
 end

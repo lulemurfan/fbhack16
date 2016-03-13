@@ -1,0 +1,2 @@
+class LiveController < ApplicationController
+end

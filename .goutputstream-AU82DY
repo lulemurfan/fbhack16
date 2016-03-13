@@ -1,0 +1,20 @@
+
+import sys
+import numpy as np
+
+
+arg = sys.argv
+print arg[1]
+exit()
+try:
+	datain = eval("datain ="+arg)
+except:
+	print arg
+
+samples = [samp for [_, samp] in datain]
+spectrum = abs(np.fft.rfft(samples))
+#f = np.arange(0,501, 2)
+
+f = range(0,501,2)
+
+print [[f[i], list(spectrum)[1:][i]] for i in range(250)]
