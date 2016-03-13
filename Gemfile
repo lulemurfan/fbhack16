@@ -52,3 +52,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'recaptcha'
 gem 'rails_12factor'
+gem "highcharts-rails"
+gem "chartkick"
