@@ -4,3 +4,40 @@
 		Hello!
 	</div>
 </div>
+<div class="panel panel-default panel-body">
+	<table class="table table-striped">
+		<thead>
+			<td>
+				File Name
+			</td>
+			<td>
+				Descripion
+			</td>
+			<td>
+				Date
+			</td>
+			<td>
+				Download
+			<td>
+		</thead>
+		<% if @files.count != 0 then %>
+			<% @files.each do |file| %>
+			<% f = File.open(file, &:readline).split(' | ') %>
+				<tr>
+					<td>
+						<a href="graph/<%= file.split('/')[-1] %>"><%= file.split('/')[-1] %></a>
+					</td>
+					<td>
+						<%= f[0] %>
+					</td>
+					<td>
+						<%= f[1] %>
+					</td>
+					<td>
+						<a href="<%= file %>">Download</a>
+					</td>
+				</tr>
+			<% end %>
+		<% end %>
+	</table>
+</div>
