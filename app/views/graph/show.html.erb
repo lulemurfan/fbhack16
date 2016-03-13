@@ -1,1 +1,12 @@
-<%= line_chart @data, xtitle: "Sample", ytitle:"Voltage", discrete: true %>
+<h1> Viewing <%= @filename %> </h1>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<p>
+			Here is your graph
+		</p>
+
+	</div>
+</div>
+<div class="panel panel-default panel-body">
+	<%= line_chart @data, xtitle: "Sample", ytitle:"Voltage", discrete: true %>
+</div>
